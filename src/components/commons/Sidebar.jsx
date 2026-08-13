@@ -33,11 +33,6 @@ const navItems = [
         icon: <FaCalendarAlt />,
     },
     {
-        name: "Analytics",
-        path: "/analytics",
-        icon: <FaChartPie />,
-    },
-    {
         name: "AI Tools",
         path: "/ai-tools",
         icon: <FaRobot />,

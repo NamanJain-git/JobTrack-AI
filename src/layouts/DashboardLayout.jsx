@@ -5,7 +5,7 @@ import Navbar from "../components/commons/Navbar";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex bg-slate-950 ">
+    <div className="flex min-h-screen bg-slate-950 ">
 
       <Sidebar/>
 

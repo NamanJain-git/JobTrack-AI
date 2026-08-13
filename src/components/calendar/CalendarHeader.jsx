@@ -1,17 +1,30 @@
-const CalendarHeader = () => {
-  return (
-    <div className="flex justify-between items-center mb-5">
+import Button from "../ui/Button";
+import { FaPlus } from "react-icons/fa";
 
-      <h2 className="text-xl font-semibold text-white">
-        Calendar
-      </h2>
+const CalendarPageHeader = ({ onAddEvent }) => {
+    return (
+        <header className="flex items-center justify-between mb-8 mt-[28px]">
 
-      <button className="text-blue-500 hover:text-blue-400">
-        View All
-      </button>
+            <div>
+                <h1 className="text-4xl font-bold text-white">
+                    Calendar
+                </h1>
 
-    </div>
-  );
+                <p className="text-slate-400 mt-2">
+                    Manage interviews, assessments and application deadlines.
+                </p>
+            </div>
+
+            <Button
+                onClick={onAddEvent}
+                className="flex items-center gap-2"
+            >
+                <FaPlus />
+                Add Event
+            </Button>
+
+        </header>
+    );
 };
 
-export default CalendarHeader;
+export default CalendarPageHeader;

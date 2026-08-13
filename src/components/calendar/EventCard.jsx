@@ -1,29 +1,53 @@
 const EventCard = ({ event }) => {
-  return (
-    <div className="bg-slate-800 rounded-xl p-3 border border-slate-700">
 
-      <h4 className="text-white font-semibold">
-        {event.company}
-      </h4>
+    const eventStyles = {
+        Interview: "bg-blue-500",
+        Assessment: "bg-purple-500",
+        Deadline: "bg-red-500",
+    };
 
-      <p className="text-sm text-slate-400">
-        {event.title}
-      </p>
+    return (
 
-      <div className="flex justify-between mt-3 text-sm">
+        <div className="p-4 rounded-xl bg-slate-800/70 border border-slate-700 hover:border-slate-600 transition">
 
-        <span className="text-blue-400">
-          {event.time}
-        </span>
+            <div className="flex items-start justify-between gap-3">
 
-        <span className="text-slate-500">
-          {event.type}
-        </span>
+                <div>
 
-      </div>
+                    <h4 className="text-white font-semibold">
+                        {event.company}
+                    </h4>
 
-    </div>
-  );
+                    <p className="text-sm text-slate-400 mt-1">
+                        {event.title}
+                    </p>
+
+                </div>
+
+                <span
+                    className={`
+                        w-2.5 h-2.5 rounded-full mt-1.5
+                        ${eventStyles[event.type]}
+                    `}
+                />
+
+            </div>
+
+
+            <div className="flex items-center justify-between mt-4">
+
+                <span className="text-sm text-slate-400">
+                    Aug {event.date}
+                </span>
+
+                <span className="text-sm text-blue-400">
+                    {event.time}
+                </span>
+
+            </div>
+
+        </div>
+    );
 };
 
 export default EventCard;

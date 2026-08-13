@@ -1,20 +1,29 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../../styles/Calendar.css";
+import Button from "../ui/Button";
+
 
 import Card from "../ui/Card";
-import { calendarEvents } from "../../data/CalendarEvent";
+import { calendarEvent } from "../../data/CalendarEvent";
 
 const MiniCalendar = () => {
   const [date, setDate] = useState(new Date());
+  const navigate = useNavigate();
+
+  const handleViewAll = () => {
+    navigate("/calendar");
+  };
 
   const getEventType = (day) => {
     const formattedDate = day.toISOString().split("T")[0];
 
-    return calendarEvents.find(
+    return calendarEvent.find(
       (event) => event.date === formattedDate
     );
+
   };
 
   return (
@@ -23,6 +32,7 @@ const MiniCalendar = () => {
       <div className="flex justify-between items-center mb-5">
 
         <h2 className="text-xl font-semibold text-white"> Calendar </h2>
+        <Button onClick={handleViewAll}> View All </Button>
 
       </div>
 

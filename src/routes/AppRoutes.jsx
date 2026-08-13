@@ -6,7 +6,6 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Applications from "../pages/applications/Applications";
 import ResumeVault from "../pages/resumeVault/ResumeVault";
 import Calendar from "../pages/calendar/Calendar";
-import Analytics from "../pages/analytics/Analytics";
 import AITools from "../pages/aiTools/AITools";
 import Settings from "../pages/settings/Settings";
 import Profile from "../pages/profile/Profile";
@@ -21,9 +20,8 @@ const AppRoutes = () => {
         <Route element={<DashboardLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/applications" element={<Applications />} />
-          <Route path="/resume-vault" element={<EmptyState />} />
-          <Route path="/calendar" element={<AddApplicationModal />} />
-          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/resume-vault" element={<ResumeVault />} />
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="/ai-tools" element={<AITools />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/profile" element={<Profile />} />
