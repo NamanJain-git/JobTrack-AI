@@ -53,7 +53,7 @@ const Information = () => {
         "w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white outline-none focus:border-blue-500";
 
     return (
-        <Card className="p-8 h-full">
+        <Card className="p-5 sm:p-8 h-full">
 
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
@@ -64,8 +64,8 @@ const Information = () => {
                         <FaUserTie className="text-blue-400 text-xl" />
                     </div>
 
-                    <div>
-                        <h2 className="text-xl font-semibold text-white">
+                    <div className="min-w-0">
+                        <h2 className=" text-lg sm:text-x font-semibold text-white">
                             Personal & Professional Information
                         </h2>
 
@@ -73,7 +73,6 @@ const Information = () => {
                             Your basic and professional career information.
                         </p>
                     </div>
-
                 </div>
 
                 {/* Edit / Save / Cancel */}

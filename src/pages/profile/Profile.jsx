@@ -6,21 +6,41 @@ import SocialLinks from "../../components/profile/SocialLinks";
 
 const Profile = () => {
     return (
-       <div className="max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
 
-            <div className="mb-8 mt-[32px]">
-                <h1 className="text-4xl font-bold text-white">
+            {/* Header */}
+            <div className="mb-6">
+
+                <h1 className="
+                    text-3xl
+                    sm:text-4xl
+                    font-bold
+                    text-white
+                ">
                     Profile
                 </h1>
 
-                <p className="text-slate-400 mt-2">
+                <p className="
+                    text-slate-400
+                    mt-2
+                    text-sm
+                    sm:text-base
+                ">
                     Manage your personal and professional information.
                 </p>
+
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-              
+            {/* Profile + Information */}
+            <div className="
+                grid
+                grid-cols-1
+                lg:grid-cols-3
+                gap-5
+                lg:gap-6
+            ">
+
                 <div className="lg:col-span-1">
                     <ProfileCard />
                 </div>
@@ -31,7 +51,9 @@ const Profile = () => {
 
             </div>
 
-            <div className="space-y-6 mt-[32px]">
+
+            {/* Other Sections */}
+            <div className="space-y-5 lg:space-y-6 mt-5 lg:mt-6">
 
                 <SkillsSection />
 

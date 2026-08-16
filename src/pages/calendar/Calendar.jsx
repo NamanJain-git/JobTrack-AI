@@ -6,34 +6,18 @@ import CalendarSidebar from "../../components/calendar/CalendarSidebar";
 import calendarEvents from "../../data/CalendarEvent";
 
 const Calendar = () => {
-
     return (
-
         <div>
 
             <CalendarPageHeader />
-
             <CalendarToolbar />
 
-            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_340px] gap-6">
-
-                {/* Main Calendar */}
-
-                <CalendarGrid
-                    events={calendarEvents}
-                />
-
-
-                {/* Right Sidebar */}
-
-                <CalendarSidebar
-                    events={calendarEvents}
-                />
-
+            <div className=" grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_340px] gap-5 lg:gap-6 ">
+                <CalendarGrid events={calendarEvents} />
+                <CalendarSidebar events={calendarEvents} />
             </div>
 
         </div>
-
     );
 };
 

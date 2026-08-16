@@ -1,25 +1,58 @@
 import { FaPlus } from "react-icons/fa";
 import Button from "../ui/Button";
-import AddApplicationModal from "./ApplicationModal";
 
 const ApplicationHeader = ({ onOpenModal }) => {
     return (
+        <header className="
+            flex
+            flex-col
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            gap-5
+            mb-6
+        ">
 
-        <header className=" flex items-center justify-between mb-8 mt-[24px]">
+            {/* Heading */}
+            <div>
 
-            <div className=" items-center">
-                <h1 className="text-4xl font-bold text-white  ">Applications</h1>
-                <p className="text-slate-200 mt-5">Manage and track all your job applications in one place.</p>
+                <h1 className="
+                    text-3xl
+                    sm:text-4xl
+                    font-bold
+                    text-white
+                ">
+                    Applications
+                </h1>
+
+                <p className="
+                    text-slate-400
+                    mt-2
+                    sm:mt-3
+                    text-sm
+                    sm:text-base
+                ">
+                    Manage and track all your job applications in one place.
+                </p>
+
             </div>
 
-            <div className="flex items-center gap-5">
-
-                <Button onClick={onOpenModal} className="flex items-center gap-2">
-                    <FaPlus />
-                    Add Application
-                </Button>
-
-            </div>
+            {/* Add Application */}
+            <Button
+                onClick={onOpenModal}
+                className="
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    w-full
+                    sm:w-auto
+                    shrink-0
+                "
+            >
+                <FaPlus />
+                Add Application
+            </Button>
 
         </header>
     );

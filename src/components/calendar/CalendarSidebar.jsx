@@ -2,10 +2,8 @@ import Card from "../ui/Card";
 import EventList from "./EventList";
 
 const CalendarSidebar = ({ events }) => {
-
     return (
-
-        <Card className="p-5">
+        <Card className="p-4 sm:p-5">
 
             <div className="mb-5">
 

@@ -14,8 +14,15 @@ const CalendarEvent = ({ event }) => {
     return (
         <div
             className={`
-                mt-2 px-2 py-1.5 rounded-lg
-                border text-xs
+                mt-1
+                px-1
+                sm:px-2
+                py-1
+                rounded-md
+                sm:rounded-lg
+                border
+                text-[9px]
+                sm:text-xs
                 ${eventStyles[event.type]}
             `}
         >
@@ -24,7 +31,13 @@ const CalendarEvent = ({ event }) => {
                 {event.company}
             </p>
 
-            <p className="text-[11px] opacity-80 truncate">
+            <p className="
+                hidden
+                sm:block
+                text-[10px]
+                opacity-80
+                truncate
+            ">
                 {event.type}
             </p>
 

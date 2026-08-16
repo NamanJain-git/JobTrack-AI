@@ -1,0 +1,389 @@
+Phase 1 — Freeze & clean the existing UI
+
+1. Global layout
+Sidebar responsive behavior
+Desktop / tablet / mobile layout
+Main content width
+Header positioning
+Prevent horizontal overflow
+Consistent page padding
+Consistent card spacing
+Mobile sidebar/menu            //DONE//
+
+2. Dashboard responsiveness
+Stats cards
+Recent applications
+Add Application card
+Calendar widget
+Upcoming events
+All sections at mobile width  //DONE//
+
+3. Applications responsiveness
+Application header
+Toolbar
+Search/filter controls
+Application cards
+View modal
+Edit modal
+Add modal
+Buttons on mobile    //DONE//
+
+4. Resume Vault responsiveness
+Resume cards
+Upload area
+Action buttons
+Mobile card layout   //DONE//
+
+5. Calendar responsiveness
+Calendar grid
+Toolbar
+Event cards
+Upcoming events
+Mobile calendar behavior //DONE//
+
+6. AI Tools responsiveness
+AI chatbot main section
+AI tool cards
+Chat input
+Mobile chat layout
+
+7. Profile responsiveness
+Profile card
+Personal/professional information
+Skills
+Job preferences
+Social links
+Edit forms
+
+8. Settings responsiveness
+Appearance
+Notifications
+Help & Support
+Data & Privacy
+
+9. Landing page responsiveness
+Hero
+Features
+AI section
+How it works
+CTA
+Footer
+
+10. Login / Signup responsiveness
+Login
+Signup
+Form validation layout
+Mobile form
+
+
+
+Phase 2 — Data architecture
+
+Before adding more functionality, establish one source of truth.
+
+Currently you have things like:
+
+const [applications, setApplications] = useState(applicationData);
+
+We'll eventually move toward:
+
+App Data
+│
+├── applications
+├── profile
+├── resumes
+├── preferences
+├── settings
+└── calendar events
+
+For the first working version:
+
+localStorage → React state → UI
+
+Later:
+
+Supabase/Firebase → React state → UI
+
+This prevents the mess where Dashboard has one application array and Applications has another.
+
+
+
+
+Phase 3 — Applications functionality
+
+This should be our first real functionality target because almost everything else depends on applications.
+
+11. Application persistence
+Add
+ ↓
+applications state
+ ↓
+localStorage
+
+On refresh:
+
+localStorage
+ ↓
+applications state
+ ↓
+cards
+
+12. Add Application
+Already working, but clean it up:
+
+Validation
+Required fields
+Proper ID
+Reset form
+Save to storage
+Close modal
+
+13. View Application
+Already working.
+We'll polish:
+
+Empty fields
+Job URL
+Deadline
+Notes
+Responsive modal
+
+14. Edit Application
+Already working.
+Make sure:
+
+Existing data loads
+Changes save
+ID doesn't change
+Modal resets correctly
+
+15. Delete Application
+Already working.
+Add:
+
+Confirmation dialog
+Remove from state
+Remove from storage
+
+16. Search
+Search by:
+
+Company
+Role
+Location
+17. Filter
+Status
+Job Type
+Location
+18. Sort
+Newest
+Oldest
+Deadline
+Company A-Z
+Phase 4 — Dashboard
+
+Once Applications are reliable, connect Dashboard to the same data.
+
+19. Dashboard statistics
+
+Instead of:
+
+24
+5
+8
+2
+
+calculate them from applications.
+
+applications
+     ↓
+   filter
+     ↓
+statistics
+20. Recent Applications
+
+Show actual applications.
+
+21. Dashboard Calendar
+
+Use actual application dates.
+
+22. Upcoming Events
+
+Generate from:
+
+Interview
+Assessment
+Deadline
+Phase 5 — Calendar
+23. Dynamic calendar
+Current month
+Previous
+Next
+Today
+24. Application events
+
+Automatically derive events from applications.
+
+25. Event details
+
+Click an event → application details.
+
+Phase 6 — Resume Vault
+26. Resume storage
+
+Initially:
+
+File
+ ↓
+browser/local storage strategy
+
+Eventually:
+
+File
+ ↓
+Supabase Storage
+27. Resume management
+Upload
+Rename
+Primary resume
+Delete
+Download
+28. Connect resume to applications
+
+When adding an application:
+
+Resume Used
+ ↓
+Select from Resume Vault
+
+This is better than manually typing "Resume V2".
+
+Phase 7 — Profile
+29. Profile persistence
+
+Save:
+
+Personal information
+Professional information
+Skills
+Job preferences
+Social links
+30. Complete editing
+
+You already have editing for some sections.
+
+Finish:
+
+Profile information
+Social links
+Profile photo
+Phase 8 — Settings
+31. Appearance
+
+Make these actually work:
+
+Dark
+Light
+System
+32. Notifications
+
+Persist:
+
+Application reminders
+Interview reminders
+Deadline reminders
+33. Data & Privacy
+
+Eventually:
+
+Export data
+Clear application data
+View stored data
+Phase 9 — Authentication
+
+Only after the application itself works.
+
+34. Landing page
+
+Finish the public-facing experience.
+
+35. Login
+36. Signup
+37. Authentication
+
+I'd use Supabase Auth if we're going with Supabase for the database.
+
+38. Protected routes
+Not logged in
+      ↓
+Login
+
+
+Logged in
+      ↓
+Dashboard
+Phase 10 — Database
+
+Then move away from local-only data.
+
+39. Supabase database
+
+Tables approximately:
+
+profiles
+applications
+resumes
+preferences
+notifications
+40. Row-level security
+
+Each user should only see their own data.
+
+41. Replace localStorage
+localStorage
+     ↓
+Supabase
+
+without changing the UI architecture.
+
+Phase 11 — AI
+
+Now build the AI Tools properly.
+
+42. JobTrack AI Chatbot ⭐
+
+Make this the primary AI feature.
+
+It should answer:
+
+Career questions
+Technical doubts
+Interview questions
+Job-search questions
+Resume questions
+
+Eventually it can access relevant JobTrack data.
+
+Example:
+
+"Which of my applications need attention this week?"
+
+That's much more impressive than a generic chatbot.
+
+43. Resume Analyzer
+44. Job Match Analyzer
+45. Cover Letter Generator
+46. Interview Prep
+47. Application Email Generator
+Phase 12 — Final polish
+48. Loading states
+49. Empty states
+50. Error states
+51. Toast notifications
+52. Confirmation dialogs
+53. Form validation
+54. Accessibility
+55. Performance optimization
+56. Final mobile testing
+57. Deployment

@@ -4,19 +4,15 @@ import Illustrator from "../../assets/icons/programming.svg";
 
 const Banner = () => {
     return (
-        <Card className="flex items-center justify-between bg-gradient-to-r from-blue-700 to-indigo-700">
+        <Card className="p-5 sm:p-6 flex items-center justify-between bg-gradient-to-r from-blue-700 to-indigo-700">
 
             <div>
-
-                <h1 className="text-4xl font-bold text-white"> Welcome Back, Naman 👋 </h1>
-
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white"> Welcome Back, Naman 👋 </h1>
                 <p className="text-slate-200 mt-3">
                     Keep applying. Every application brings you
                     closer to your dream job.
                 </p>
-
                 <Button className="mt-8"> Add Application </Button>
-
             </div>
 
             <div className="hidden lg:flex items-center justify-center w-60 h-60 mr-10 rounded-full bg-white/5 backdrop-blur-sm">
@@ -28,3 +24,4 @@ const Banner = () => {
 };
 
 export default Banner;
+

@@ -4,17 +4,19 @@ import Card from "../ui/Card";
 
 const EmptyState = () => {
     return (
+        <Card className=" w-full max-w-2xl mx-auto flex flex-col items-center justify-center text-center gap-5 py-10 sm:py-12  mt-[32px] " >
 
-        <Card className="hover:border-blue-500 transition-all duration-300 mt-[32px] flex flex-col text-center items-center justify-center gap-6 w-[50%] m-auto">
-            <div className=" items-center justify-center mt-10">
-                <h1 className="text-white text-xl font-bold"> 📄 No Applications Yet </h1>
-                <h2 className="text-white text-l font-semibold"> Start tracking your first application. </h2>
+            <div>
+                <h1 className=" text-xl sm:text-2xl font-bold text-white "> 📄 No Applications Yet </h1>
+                <p className=" text-slate-400 text-sm sm:text-base font-medium mt-2 ">
+                    Start tracking your first application.
+                </p>
             </div>
-
-            <Button className="mt-5 flex items-center gap-2">
+            <Button className=" flex items-center justify-center gap-2 w-full sm:w-auto " >
                 <FaPlus />
                 Add Application
             </Button>
+
         </Card>
     );
 };

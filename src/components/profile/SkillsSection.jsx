@@ -48,7 +48,7 @@ const SkillsSection = () => {
     };
 
     return (
-        <Card className="p-8">
+        <Card className="p-5 sm:p-8">
 
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7">
@@ -59,8 +59,8 @@ const SkillsSection = () => {
                         <FaCode className="text-purple-400 text-xl" />
                     </div>
 
-                    <div>
-                        <h2 className="text-xl font-semibold text-white">
+                    <div className="min-w-0">
+                        <h2 className="text-lg sm:text-xl font-semibold text-white">
                             Skills
                         </h2>
 

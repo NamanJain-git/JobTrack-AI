@@ -1,21 +1,32 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Sidebar from "../components/commons/Sidebar";
 import Navbar from "../components/commons/Navbar";
 
 const DashboardLayout = () => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen bg-slate-950 ">
+    <div className="min-h-screen bg-slate-950">
 
-      <Sidebar/>
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
 
-      <div className="flex-1 ml-[320px] mt-20">
+      <div className="min-h-screen lg:ml-[320px]">
 
-        <Navbar />
+        <Navbar
+          onMenuClick={() => setIsSidebarOpen(true)}
+        />
 
-        <main className="p-6 ">
+        <main className="pt-20">
 
-          <Outlet />
+          <div className="p-4 sm:p-5 lg:p-6">
+            <Outlet />
+          </div>
 
         </main>
 
