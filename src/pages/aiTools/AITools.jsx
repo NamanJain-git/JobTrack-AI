@@ -1,5 +1,6 @@
-import AIToolHeader from "../../components/aitools/AiToolsHeader";
+import AiToolHeader from "../../components/aitools/AiToolsHeader";
 
+import AiAssistant from "../../components/aitools/AiAssistant";
 import ResumeAnalyzer from "../../components/aitools/ResumeAnalyzer";
 import JobMatchAnalyzer from "../../components/aitools/JobMatchAnalyzer";
 import CoverLetterGenerator from "../../components/aitools/CoverLetterGenerator";
@@ -7,24 +8,39 @@ import InterviewPrep from "../../components/aitools/InterviewPrep";
 import ApplicationEmail from "../../components/aitools/ApplicationEmail";
 
 const AITools = () => {
+
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
 
-      <AIToolHeader />
+      <AiToolHeader />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <AiAssistant />
 
-        <ResumeAnalyzer />
+      <section className="mt-10">
 
-        <JobMatchAnalyzer />
+        <h2 className="text-2xl font-semibold text-white">
+          AI Tools
+        </h2>
 
-        <CoverLetterGenerator />
+        <p className="text-slate-400 mt-1 mb-5">
+          Specialized tools for your job search.
+        </p>
 
-        <InterviewPrep />
+        <div className="space-y-4">
 
-        <ApplicationEmail />
+          <ResumeAnalyzer />
 
-      </div>
+          <JobMatchAnalyzer />
+
+          <CoverLetterGenerator />
+
+          <InterviewPrep />
+
+          <ApplicationEmail />
+
+        </div>
+
+      </section>
 
     </div>
   );

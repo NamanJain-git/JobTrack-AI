@@ -1,18 +1,20 @@
 import { FaPlus } from "react-icons/fa";
 import Button from "../ui/Button";
 
-const AIToolsHeader = () => {
+const AiToolsHeader = () => {
     return (
+        <header className="mb-8 mt-6">
 
-        <header className=" flex items-center justify-between mb-8 mt-[24px]">
+            <h1 className="text-4xl font-bold text-white">
+                AI Tools
+            </h1>
 
-            <div className=" items-center">
-                <h1 className="text-4xl font-bold text-white  ">AI Tools</h1>
-                <p className="text-slate-200 mt-5"> AI-powered tools to improve your job search.</p>
-            </div>
+            <p className="text-slate-400 mt-2">
+                AI-powered tools to help you manage and improve your job hunt.
+            </p>
 
         </header>
     );
 };
 
-export default AIToolsHeader;
+export default AiToolsHeader;

@@ -53,13 +53,13 @@ Personal/professional information
 Skills
 Job preferences
 Social links
-Edit forms
+Edit forms   //DONE//
 
 8. Settings responsiveness
 Appearance
 Notifications
 Help & Support
-Data & Privacy
+Data & Privacy   //DONE//
 
 9. Landing page responsiveness
 Hero

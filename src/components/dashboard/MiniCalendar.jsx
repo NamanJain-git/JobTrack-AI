@@ -32,7 +32,7 @@ const MiniCalendar = () => {
       <div className="flex justify-between items-center mb-5">
 
         <h2 className="text-xl font-semibold text-white"> Calendar </h2>
-        <Button onClick={handleViewAll}> View All </Button>
+        <Button onClick={handleViewAll} className="shrink-0 text-sm" > View All </Button>
 
       </div>
 
