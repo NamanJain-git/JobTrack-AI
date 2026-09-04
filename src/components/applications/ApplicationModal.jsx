@@ -11,7 +11,7 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
         jobType: "",
         location: "",
         appliedDate: "",
-        deadline: "",
+        platform: "",
         resumeUsed: "",
         jobUrl: "",
         notes: "",
@@ -37,6 +37,12 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!formData.company.trim() || !formData.role.trim() || !formData.appliedDate || !formData.platform.trim()) {
+            alert("Please fill in Company Name, Job Role, Applied Date, and Platform.");
+            return;
+        }
+
         onSaveApplication(formData);
         setFormData(initialFormData);
         onClose();
@@ -62,12 +68,12 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
                 <form onSubmit={handleSubmit}>
                     <div className=" grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 ">
                         <div>
-                            <label className="block text-slate-300 mb-2"> Company Name </label>
+                            <label className="block text-slate-300 mb-2"> Company Name <span className="font-bold text-red-700">*</span></label>
                             <input type="text" name="company" value={formData.company} onChange={handleChange} className={inputClass} />
                         </div>
 
                         <div>
-                            <label className="block text-slate-300 mb-2"> Job Role </label>
+                            <label className="block text-slate-300 mb-2"> Job Role <span className="font-bold text-red-700">*</span> </label>
                             <input type="text" name="role" value={formData.role} onChange={handleChange} className={inputClass} />
                         </div>
 
@@ -88,7 +94,7 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
                                 <option value="">Select</option>
                                 <option>Full Time</option>
                                 <option>Internship</option>
-                                <option>Apprenticeship</option> 
+                                <option>Apprenticeship</option>
                                 <option>Contract</option>
                             </select>
                         </div>
@@ -99,13 +105,13 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
                         </div>
 
                         <div>
-                            <label className="block text-slate-300 mb-2"> Applied Date </label>
+                            <label className="block text-slate-300 mb-2"> Applied Date <span className="font-bold text-red-700">*</span> </label>
                             <input type="date" name="appliedDate" value={formData.appliedDate} onChange={handleChange} className={inputClass} />
                         </div>
 
                         <div>
-                            <label className="block text-slate-300 mb-2"> Deadline </label>
-                            <input type="date" name="deadline" value={formData.deadline} onChange={handleChange} className={inputClass} />
+                            <label className="block text-slate-300 mb-2"> Platform <span className="font-bold text-red-700">*</span></label>
+                            <input type="text" name="platform" value={formData.platform} onChange={handleChange} className={inputClass} />
                         </div>
 
                         <div>
@@ -116,12 +122,12 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
 
                     <div className="mt-5 sm:mt-6">
                         <label className="block text-slate-300 mb-2"> Job URL </label>
-                        <input type="url" name="jobUrl" value={formData.jobUrl} onChange={handleChange} className={inputClass}/>
+                        <input type="url" name="jobUrl" value={formData.jobUrl} onChange={handleChange} className={inputClass} />
                     </div>
 
                     <div className="mt-5 sm:mt-6">
                         <label className="block text-slate-300 mb-2"> Notes</label>
-                        <textarea rows="4" name="notes" value={formData.notes} onChange={handleChange} className={`${inputClass} resize-none`}/>
+                        <textarea rows="4" name="notes" value={formData.notes} onChange={handleChange} className={`${inputClass} resize-none`} />
                     </div>
 
                     <div className=" flex flex-col-reverse sm:flex-row justify-end gap-3 sm:gap-4 mt-6 sm:mt-8 ">
@@ -129,7 +135,7 @@ const AddApplicationModal = ({ isOpen, onClose, onSaveApplication, application, 
                             Cancel
                         </Button>
                         <Button type="submit" className="w-full sm:w-auto" >
-                            {application ? "Save Changes" : "Save Application"  }
+                            {application ? "Save Changes" : "Save Application"}
                         </Button>
                     </div>
                 </form>

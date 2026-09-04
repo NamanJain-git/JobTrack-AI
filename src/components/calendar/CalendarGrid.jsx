@@ -1,10 +1,10 @@
 import Card from "../ui/Card";
 import CalendarEvent from "./CalendarEvent";
 
-const CalendarGrid = ({ events }) => {
+const CalendarGrid = ({ events, currentDate }) => {
 
-    const year = 2026;
-    const month = 7;
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
 
     const days = [
         "Sun",

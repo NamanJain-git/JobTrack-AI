@@ -6,8 +6,8 @@ const ResumeAnalyzer = () => {
     return (
         <Card className="flex flex-col sm:flex-row sm:items-center gap-5">
 
-            <div className="w-14 h-14 shrink-0 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                📄
+            <div className="w-14 h-14 shrink-0 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                <FaFileAlt className="text-purple-400 text-2xl" />
             </div>
 
             <div className="flex-1">
@@ -20,10 +20,13 @@ const ResumeAnalyzer = () => {
                 </p>
             </div>
 
-            <Button>
-                Open Tool →
+            <Button className="w-fit flex items-center gap-2">
+                Open Tool
+                <FaArrowRight />
             </Button>
 
         </Card>
     );
 };
+
+export default ResumeAnalyzer;

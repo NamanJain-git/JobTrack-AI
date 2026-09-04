@@ -109,7 +109,7 @@ const Applications = () => {
         ))}
       </div>
 
-      {applications.length === 0 && <EmptyState />}
+      {applications.length === 0 && <EmptyState onAddApplication={() => setIsModalOpen(true)} />}
 
       <AddApplicationModal
         isOpen={isModalOpen}

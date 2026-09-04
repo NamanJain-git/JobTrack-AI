@@ -45,7 +45,7 @@ Mobile calendar behavior //DONE//
 AI chatbot main section
 AI tool cards
 Chat input
-Mobile chat layout
+Mobile chat layout   //DONE//
 
 7. Profile responsiveness
 Profile card

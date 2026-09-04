@@ -2,7 +2,7 @@ import { FaPlus } from "react-icons/fa";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 
-const EmptyState = () => {
+const EmptyState = ({ onAddApplication }) => {
     return (
         <Card className=" w-full max-w-2xl mx-auto flex flex-col items-center justify-center text-center gap-5 py-10 sm:py-12  mt-[32px] " >
 
@@ -12,7 +12,7 @@ const EmptyState = () => {
                     Start tracking your first application.
                 </p>
             </div>
-            <Button className=" flex items-center justify-center gap-2 w-full sm:w-auto " >
+            <Button  onClick={onAddApplication} className=" flex items-center justify-center gap-2 w-full sm:w-auto " >
                 <FaPlus />
                 Add Application
             </Button>

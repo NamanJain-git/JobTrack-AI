@@ -10,8 +10,7 @@ import AITools from "../pages/aiTools/AITools";
 import Settings from "../pages/settings/Settings";
 import Profile from "../pages/profile/Profile";
 import NotFound from "../pages/notFound/NotFound";
-import EmptyState from "../components/applications/EmptyState";
-import AddApplicationModal from "../components/applications/ApplicationModal"
+
 
 const AppRoutes = () => {
   return (

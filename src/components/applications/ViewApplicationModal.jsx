@@ -254,7 +254,7 @@ const ViewApplicationModal = ({
                         <div>
 
                             <p className="text-slate-400 text-sm mb-2">
-                                Deadline
+                                Platform
                             </p>
 
                             <div className="flex items-center gap-3 text-white">
@@ -262,7 +262,7 @@ const ViewApplicationModal = ({
                                 <FaCalendarAlt className="text-red-400 shrink-0" />
 
                                 <span>
-                                    {application.deadline || "No deadline"}
+                                    {application.platform || "No platform"}
                                 </span>
 
                             </div>
